@@ -251,10 +251,255 @@ textarea {
   padding: 32px 12px;
 }
 
+/* ===== 离线装车调度 ===== */
+.panel-block {
+  background: #fff;
+  border: 1px solid #dfe7f1;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.topbar.panel-block {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.net-box {
+  min-width: 340px;
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  border-left: 1px solid #e3e9f2;
+  padding-left: 24px;
+}
+
+.net-line,
+.version-line,
+.quick-metrics {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.net-label {
+  font-weight: 700;
+  color: #445069;
+}
+
+.arrow {
+  color: #93a0b5;
+  font-size: 13px;
+}
+
+.sync-time {
+  margin: 0;
+  color: #8a95a9;
+  font-size: 12px;
+}
+
+.chip {
+  border-radius: 999px;
+  background: #eef2f7;
+  padding: 5px 10px;
+  font-size: 13px;
+  color: #445069;
+}
+
+.chip b {
+  margin-left: 4px;
+}
+
+.chip.danger {
+  background: #fdecea;
+  color: #c84b31;
+}
+
+.chip.ok {
+  background: #e8f4ef;
+  color: #14724f;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.panel-title h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #69758c;
+  background: #f5f8fc;
+  border-radius: 8px;
+  padding: 8px 12px;
+  line-height: 1.6;
+}
+
+.stage-form {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  background: #fbfcfe;
+  border: 1px dashed #cfd8e5;
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.form-item {
+  display: grid;
+  gap: 6px;
+}
+
+.form-item label {
+  font-size: 12px;
+}
+
+.plate-readonly {
+  font-weight: 700;
+  color: #176b87;
+  padding: 6px 10px;
+  background: #eef5fb;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.muted {
+  color: #8a95a9;
+  font-size: 12px;
+}
+
+.muted-small {
+  color: #8a95a9;
+  font-size: 12px;
+}
+
+.receipt {
+  font-size: 12px;
+  color: #b07a1a;
+}
+
+.over {
+  color: #c84b31;
+  font-weight: 700;
+}
+
+.cap {
+  color: #8a95a9;
+  font-size: 12px;
+}
+
+.over-text {
+  color: #c84b31;
+  font-size: 12px;
+}
+
+.mismatch {
+  color: #c84b31;
+  font-weight: 700;
+}
+
+.conflict-card {
+  border: 1px solid #f0c9c1;
+  background: #fff8f7;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.conflict-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.conflict-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px 18px;
+  font-size: 13px;
+  color: #445069;
+  margin-bottom: 12px;
+}
+
+.field-label {
+  display: inline-block;
+  min-width: 96px;
+  color: #8a95a9;
+}
+
+.resolve-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.legend {
+  display: flex;
+  gap: 8px;
+}
+
+.log-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.log-item {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 13px;
+  border-bottom: 1px dashed #e8edf4;
+  padding-bottom: 8px;
+}
+
+.log-time {
+  color: #8a95a9;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.log-msg {
+  color: #3d4860;
+  line-height: 1.5;
+}
+
+.foot-note {
+  color: #8a95a9;
+  font-size: 12px;
+  text-align: center;
+  padding: 10px 0 24px;
+}
+
+.main-tabs .el-tabs__header {
+  margin-bottom: 12px;
+}
+
 @media (max-width: 860px) {
   .app { padding: 18px; }
-  .topbar, .workspace { grid-template-columns: 1fr; }
-  .stack { justify-content: flex-start; }
+  .topbar.panel-block { grid-template-columns: 1fr; }
+  .net-box { border-left: 0; padding-left: 0; min-width: 0; }
   .metrics { grid-template-columns: 1fr; }
   .details { grid-template-columns: 1fr; }
 }
